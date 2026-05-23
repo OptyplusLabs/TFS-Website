@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furniture - The Future Store</title>
+  <meta name="description" content="The Future Store offers a wide range of modern furniture and equipment for the Classroom, Office Spaces, Laboratories and more in Zimbabwe and Southern Africa.">
+  <meta name="keywords" content="furniture, classroom furniture, office furniture, laboratory furniture, computer lab furniture, library furniture, Zimbabwe, Harare, The Future Store">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── Page Hero ── */
+    .page-hero {
+      position: relative;
+      height: 380px;
+      background: url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1920&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(6,31,92,.90) 0%, rgba(6,31,92,.60) 60%, rgba(6,31,92,.30) 100%);
+    }
+    .ph-content {
+      position: relative;
+      z-index: 1;
+    }
+    .ph-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 3px;
+      margin-bottom: 16px;
+    }
+    .ph-content h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      text-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .ph-content p {
+      color: rgba(255,255,255,.88);
+      font-size: 16px;
+      max-width: 640px;
+      line-height: 1.75;
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      background: var(--bg-light);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .breadcrumb ol {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .breadcrumb ol li + li::before {
+      content: '\f105';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 10px;
+      color: var(--text-light);
+      margin-right: 8px;
+    }
+    .breadcrumb ol li a {
+      color: var(--primary);
+      font-weight: 500;
+      transition: color .3s;
+    }
+    .breadcrumb ol li a:hover { color: var(--accent); }
+    .breadcrumb ol li:last-child { color: var(--text); font-weight: 500; }
+
+    /* ── Furniture Product Grid ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    /* ── Furniture Card ── */
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,.10), 0 2px 4px -1px rgba(0,0,0,.06);
+      transition: transform .35s, box-shadow .35s;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,.10), 0 4px 6px -2px rgba(0,0,0,.05);
+    }
+
+    .pc-img {
+      height: 220px;
+      overflow: hidden;
+    }
+    .pc-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+    .product-card:hover .pc-img img { transform: scale(1.06); }
+
+    .pc-body {
+      padding: 26px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .pc-body h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .pc-body > p {
+      color: var(--text-light);
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+    .pc-features {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px 12px;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+    .pc-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .pc-features li::before {
+      content: '\f058';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: var(--accent);
+      font-size: 12px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #1a5fc8 100%);
+      padding: 70px 0;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,.82);
+      font-size: 16px;
+      max-width: 640px;
+      margin: 0 auto 32px;
+      line-height: 1.75;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 992px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .ph-content h1 { font-size: 34px; }
+    }
+    @media (max-width: 640px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .page-hero { height: 320px; }
+      .ph-content h1 { font-size: 26px; }
+      .pc-features { grid-template-columns: 1fr; }
+      .cta-section h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar"><div class="container"><div class="top-bar-left"><span><i class="fas fa-phone-alt"></i> +263 242 793535</span><span><i class="fas fa-envelope"></i> sales@thefuturestore.co.zw</span><span><i class="fas fa-clock"></i> Mon–Fri: 8:00AM–6:00PM &nbsp;|&nbsp; Sat: 8:00AM–5:00PM</span></div><div class="top-bar-right"><a href="https://www.facebook.com/thefuturestoresz/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/thefuturestorezim/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://zw.linkedin.com/company/the-future-store-zim" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a></div></div></div>
+
+  <!-- HEADER -->
+  <header id="site-header"><div class="container"><div class="header-inner">
+    <a href="index.html" class="logo"><div class="logo-mark"><i class="fas fa-bolt"></i></div><div class="logo-text"><span class="brand">The Future<em>Store</em></span><span class="tagline">Technology Solutions</span></div></a>
+    <nav aria-label="Main navigation"><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="interactive-boards.html">Interactive Boards <i class="fas fa-chevron-down"></i></a><ul class="dropdown"><li><a href="clevertouch.html"><i class="fas fa-angle-right"></i> Clevertouch</a></li><li><a href="newline.html"><i class="fas fa-angle-right"></i> Newline</a></li><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> All Interactive Boards</a></li></ul></li>
+      <li><a href="led-displays.html">LED Displays</a></li>
+      <li><a href="interactive-kiosk.html">Interactive Kiosks</a></li>
+      <li><a href="products.html">Products <i class="fas fa-chevron-down"></i></a><ul class="dropdown"><li><a href="products.html#tablets"><i class="fas fa-angle-right"></i> Tablets</a></li><li><a href="products.html#laptops"><i class="fas fa-angle-right"></i> Laptops</a></li><li><a href="products.html#computers"><i class="fas fa-angle-right"></i> Computers</a></li><li><a href="products.html#projectors"><i class="fas fa-angle-right"></i> Projectors</a></li></ul></li>
+      <li class="active"><a href="furniture.html">Furniture</a></li>
+      <li><a href="video-conferencing.html">Video Conferencing</a></li>
+      <li><a href="office-365.html">Office 365</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+  </div></div></header>
+
+  <!-- MOBILE NAV -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+  <div class="mob-nav" id="mobNav" aria-hidden="true">
+    <div class="mob-nav-head"><span style="font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;color:#0a3d91;">The Future<em style="color:#e85d04;font-style:normal;">Store</em></span><button class="mob-close-btn" id="mobClose" aria-label="Close menu"><i class="fas fa-times"></i></button></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" class="mob-has-sub">Interactive Boards <i class="fas fa-chevron-down"></i></a><ul class="mob-sub-list"><li><a href="clevertouch.html"><i class="fas fa-angle-right"></i> Clevertouch</a></li><li><a href="newline.html"><i class="fas fa-angle-right"></i> Newline</a></li><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> All Interactive Boards</a></li></ul></li>
+      <li><a href="led-displays.html">LED Displays</a></li>
+      <li><a href="interactive-kiosk.html">Interactive Kiosks</a></li>
+      <li><a href="#" class="mob-has-sub">Products <i class="fas fa-chevron-down"></i></a><ul class="mob-sub-list"><li><a href="products.html#tablets"><i class="fas fa-angle-right"></i> Tablets</a></li><li><a href="products.html#laptops"><i class="fas fa-angle-right"></i> Laptops</a></li><li><a href="products.html#computers"><i class="fas fa-angle-right"></i> Computers</a></li><li><a href="products.html#projectors"><i class="fas fa-angle-right"></i> Projectors</a></li></ul></li>
+      <li><a href="furniture.html">Furniture</a></li>
+      <li><a href="video-conferencing.html">Video Conferencing</a></li>
+      <li><a href="office-365.html">Office 365</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Furniture hero">
+    <div class="container">
+      <div class="ph-content">
+        <span class="ph-tag">Modern Furniture</span>
+        <h1>Modern Furniture &amp; Equipment</h1>
+        <p>The Future Store offers a wide range of modern furniture and equipment for the Classroom, Office Spaces, Laboratories and more in Zimbabwe and Southern Africa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li>Furniture</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- INTRO -->
+  <section style="padding:70px 0 30px;background:#fff;">
+    <div class="container">
+      <div class="section-title">
+        <span class="tag">Our Range</span>
+        <h2>Furniture for Every <span>Space</span></h2>
+        <p>We supply modern, durable furniture designed for comfort, functionality and productivity across educational institutions, offices and laboratories in Zimbabwe and Southern Africa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FURNITURE CATEGORIES -->
+  <section style="padding:0 0 80px;background:#fff;">
+    <div class="container">
+      <div class="product-grid">
+
+        <!-- Card 1 – Classroom Furniture -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=640&q=80" alt="Classroom Furniture" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Classroom Furniture</h3>
+            <p>Modern and comfortable classroom furniture designed for the modern learning environment. Collaborative, flexible designs that promote engagement and active learning.</p>
+            <ul class="pc-features">
+              <li>Student Desks &amp; Chairs</li>
+              <li>Teacher Workstations</li>
+              <li>Collaborative Tables</li>
+              <li>Stackable &amp; Foldable Options</li>
+              <li>Ergonomic Design</li>
+              <li>Various Colours Available</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;margin-top:auto;">Enquire</a>
+          </div>
+        </div>
+
+        <!-- Card 2 – Pre-school Furniture -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?w=640&q=80" alt="Pre-school Furniture" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Pre-school &amp; Early Childhood</h3>
+            <p>Safe, durable and colourful furniture designed for pre-school children and early childhood development centres. Meets all child safety standards.</p>
+            <ul class="pc-features">
+              <li>Child-Safe Materials</li>
+              <li>Bright, Engaging Colours</li>
+              <li>Age-Appropriate Sizing</li>
+              <li>Non-Toxic Finishes</li>
+              <li>Rounded Edges</li>
+              <li>Easy to Clean</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;margin-top:auto;">Enquire</a>
+          </div>
+        </div>
+
+        <!-- Card 3 – Office Furniture -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=640&q=80" alt="Executive Office Furniture" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Executive Office Furniture</h3>
+            <p>Premium executive furniture for modern offices and boardrooms. Professional designs that create a productive and impressive working environment.</p>
+            <ul class="pc-features">
+              <li>Executive Desks &amp; Chairs</li>
+              <li>Boardroom Tables</li>
+              <li>Reception Furniture</li>
+              <li>Filing &amp; Storage Solutions</li>
+              <li>Ergonomic Seating</li>
+              <li>Custom Configurations</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;margin-top:auto;">Enquire</a>
+          </div>
+        </div>
+
+        <!-- Card 4 – Science Laboratory -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1532094349884-543559373f9a?w=640&q=80" alt="Science Laboratory Furniture" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Science Laboratory Furniture</h3>
+            <p>Modern science laboratory furniture built to withstand the rigours of laboratory use. Chemical-resistant surfaces and durable construction for long-lasting performance.</p>
+            <ul class="pc-features">
+              <li>Chemical-Resistant Surfaces</li>
+              <li>Laboratory Benches &amp; Stools</li>
+              <li>Fume Hood Cabinets</li>
+              <li>Safety Cupboards</li>
+              <li>Sink Units</li>
+              <li>Customisable Layouts</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;margin-top:auto;">Enquire</a>
+          </div>
+        </div>
+
+        <!-- Card 5 – Computer Lab -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=640&q=80" alt="Computer Lab Furniture" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Computer Lab Furniture</h3>
+            <p>Purpose-designed computer laboratory furniture for schools and training centres. Cable management solutions and ergonomic workstations for comfortable computing environments.</p>
+            <ul class="pc-features">
+              <li>Computer Workstations</li>
+              <li>Cable Management Systems</li>
+              <li>Adjustable Monitor Arms</li>
+              <li>Ergonomic Chairs</li>
+              <li>Network Rack Cabinets</li>
+              <li>Anti-Static Flooring Mats</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;margin-top:auto;">Enquire</a>
+          </div>
+        </div>
+
+        <!-- Card 6 – Library Furniture -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=640&q=80" alt="Library Furniture" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Library Furniture</h3>
+            <p>Comfortable and functional library furniture for schools, universities and public libraries. Reading tables, book shelving systems and relaxed reading areas.</p>
+            <ul class="pc-features">
+              <li>Bookshelf Systems</li>
+              <li>Reading Tables &amp; Chairs</li>
+              <li>Study Carrels</li>
+              <li>Bean Bags &amp; Soft Seating</li>
+              <li>Librarian Counters</li>
+              <li>Display Stands</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;margin-top:auto;">Enquire</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Transform Your Space with Modern Furniture</h2>
+      <p>Contact The Future Store to discuss your furniture requirements. We supply and install modern furniture across Zimbabwe and Southern Africa.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+        <a href="tel:+263242793535" class="btn btn-outline">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer><div class="container"><div class="footer-grid">
+    <div class="footer-col footer-brand"><span class="fn">The Future<em>Store</em></span><p>Official Distribution Partner of Logitech, Newline, Clevertouch and Absen. Leading provider of technology products, services and solutions in Zimbabwe and Southern Africa.</p><div class="footer-social"><a href="https://www.facebook.com/thefuturestoresz/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/thefuturestorezim/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://zw.linkedin.com/company/the-future-store-zim" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> Interactive Boards</a></li><li><a href="led-displays.html"><i class="fas fa-angle-right"></i> LED Displays</a></li><li><a href="interactive-kiosk.html"><i class="fas fa-angle-right"></i> Interactive Kiosks</a></li><li><a href="video-conferencing.html"><i class="fas fa-angle-right"></i> Video Conferencing</a></li><li><a href="products.html"><i class="fas fa-angle-right"></i> Consumer Electronics</a></li><li><a href="furniture.html"><i class="fas fa-angle-right"></i> Furniture</a></li><li><a href="office-365.html"><i class="fas fa-angle-right"></i> Microsoft Office 365</a></li><li><a href="news.html"><i class="fas fa-angle-right"></i> News &amp; Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Contact Us</h4><div class="fci"><i class="fas fa-map-marker-alt"></i><span>Shop MK26 Westgate Mall, Harare, Zimbabwe</span></div><div class="fci"><i class="fas fa-map-marker-alt"></i><span>Shop 1, Old Mutual House, Corner Speke Ave &amp; Sam Nujoma St, Harare</span></div><div class="fci"><i class="fas fa-phone-alt"></i><span><a href="tel:+263242793535">+263 242 793535</a><br><a href="tel:+263773785638">+263 773 785 638</a></span></div><div class="fci"><i class="fas fa-envelope"></i><span><a href="mailto:sales@thefuturestore.co.zw">sales@thefuturestore.co.zw</a></span></div></div>
+    <div class="footer-col"><h4>Business Hours</h4><div class="hours-row"><span class="day">Monday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Tuesday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Wednesday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Thursday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Friday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Saturday</span><span>8:00 AM – 5:00 PM</span></div><div class="hours-row"><span class="day">Sunday</span><span class="closed">Closed</span></div></div>
+  </div></div>
+  <div class="footer-bottom"><div class="container"><span>&copy; 2025 <a href="https://www.thefuturestore.co.zw" target="_blank" rel="noopener">The Future Store Pvt Ltd</a>. All Rights Reserved.</span><span>Visit: <a href="https://www.thefuturestore.co.zw" target="_blank" rel="noopener">www.thefuturestore.co.zw</a></span></div></div></footer>
+  <button id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Boards - The Future Store</title>
+  <meta name="description" content="The Future Store is the exclusive Clevertouch distributor and official Newline partner in Zimbabwe. Next-generation interactive boards for classrooms and boardrooms.">
+  <meta name="keywords" content="interactive boards, clevertouch, newline, smartboards, Zimbabwe, Harare, classroom, boardroom, interactive display">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span><i class="fas fa-phone-alt"></i> +263 242 793535</span>
+        <span><i class="fas fa-envelope"></i> sales@thefuturestore.co.zw</span>
+        <span><i class="fas fa-clock"></i> Mon–Fri: 8:00AM–6:00PM &nbsp;|&nbsp; Sat: 8:00AM–5:00PM</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://www.facebook.com/thefuturestoresz/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/thefuturestorezim/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://zw.linkedin.com/company/the-future-store-zim" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-mark"><i class="fas fa-bolt"></i></div>
+          <div class="logo-text">
+            <span class="brand">The Future<em>Store</em></span>
+            <span class="tagline">Technology Solutions</span>
+          </div>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="active">
+              <a href="interactive-boards.html">Interactive Boards <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown">
+                <li><a href="clevertouch.html"><i class="fas fa-angle-right"></i> Clevertouch</a></li>
+                <li><a href="newline.html"><i class="fas fa-angle-right"></i> Newline</a></li>
+                <li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> All Interactive Boards</a></li>
+              </ul>
+            </li>
+            <li><a href="led-displays.html">LED Displays</a></li>
+            <li><a href="interactive-kiosk.html">Interactive Kiosks</a></li>
+            <li>
+              <a href="products.html">Products <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown">
+                <li><a href="products.html#tablets"><i class="fas fa-angle-right"></i> Tablets</a></li>
+                <li><a href="products.html#laptops"><i class="fas fa-angle-right"></i> Laptops</a></li>
+                <li><a href="products.html#computers"><i class="fas fa-angle-right"></i> Computers</a></li>
+                <li><a href="products.html#projectors"><i class="fas fa-angle-right"></i> Projectors</a></li>
+              </ul>
+            </li>
+            <li><a href="furniture.html">Furniture</a></li>
+            <li><a href="video-conferencing.html">Video Conferencing</a></li>
+            <li><a href="office-365.html">Office 365</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+  <div class="mob-nav" id="mobNav" aria-hidden="true">
+    <div class="mob-nav-head">
+      <span style="font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;color:#0a3d91;">The Future<em style="color:#e85d04;font-style:normal;">Store</em></span>
+      <button class="mob-close-btn" id="mobClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#" class="mob-has-sub">Interactive Boards <i class="fas fa-chevron-down"></i></a>
+        <ul class="mob-sub-list">
+          <li><a href="clevertouch.html"><i class="fas fa-angle-right"></i> Clevertouch</a></li>
+          <li><a href="newline.html"><i class="fas fa-angle-right"></i> Newline</a></li>
+          <li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> All Interactive Boards</a></li>
+        </ul>
+      </li>
+      <li><a href="led-displays.html">LED Displays</a></li>
+      <li><a href="interactive-kiosk.html">Interactive Kiosks</a></li>
+      <li>
+        <a href="#" class="mob-has-sub">Products <i class="fas fa-chevron-down"></i></a>
+        <ul class="mob-sub-list">
+          <li><a href="products.html#tablets"><i class="fas fa-angle-right"></i> Tablets</a></li>
+          <li><a href="products.html#laptops"><i class="fas fa-angle-right"></i> Laptops</a></li>
+          <li><a href="products.html#computers"><i class="fas fa-angle-right"></i> Computers</a></li>
+          <li><a href="products.html#projectors"><i class="fas fa-angle-right"></i> Projectors</a></li>
+        </ul>
+      </li>
+      <li><a href="furniture.html">Furniture</a></li>
+      <li><a href="video-conferencing.html">Video Conferencing</a></li>
+      <li><a href="office-365.html">Office 365</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&q=80');">
+    <div class="ph-inner">
+      <span class="ph-tag">Official Distributor</span>
+      <h1>Interactive Boards for Classrooms &amp; Boardrooms</h1>
+      <p class="ph-desc">We provide next-generation interactive boards for offices and classrooms. As an exclusive Clevertouch distributor and official Newline partner in Zimbabwe, we deliver world-class interactive display technology.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-angle-right"></i>
+        <span>Interactive Boards</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- SECTION 1: INTRO -->
+  <section style="padding: 70px 0; background: #fff;">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <span class="subtag">Why Interactive Boards?</span>
+          <h2>Transform the Way You Teach &amp; <span>Collaborate</span></h2>
+          <p>Interactive boards are revolutionising education and business communication across the globe. By replacing traditional whiteboards and projector-screen setups, they create dynamic, immersive environments where ideas come to life through touch, gesture, and real-time digital interaction.</p>
+          <p>In the classroom, interactive boards dramatically increase student engagement and comprehension. Teachers can draw on limitless digital canvases, embed videos, run interactive quizzes, and access thousands of pre-built lesson resources — all from one device. Students become active participants rather than passive observers.</p>
+          <p>In the boardroom, interactive displays enable seamless collaboration between in-room and remote participants. Teams can annotate shared documents, wirelessly mirror any device to the screen, and capture every decision in real time — making meetings shorter, smarter, and more productive.</p>
+          <ul class="feat-list">
+            <li><i class="fas fa-check-circle"></i> Enhanced Engagement &amp; Participation</li>
+            <li><i class="fas fa-check-circle"></i> Multi-touch Collaboration</li>
+            <li><i class="fas fa-check-circle"></i> Wireless Screen Sharing</li>
+            <li><i class="fas fa-check-circle"></i> Built-in Software &amp; Apps</li>
+            <li><i class="fas fa-check-circle"></i> 4K Ultra HD Display Quality</li>
+          </ul>
+          <a href="#brands" class="btn btn-primary">Explore Our Brands</a>
+        </div>
+        <div class="intro-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Interactive board in use in a modern classroom" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: BRAND PARTNERS -->
+  <section id="brands" style="padding: 80px 0; background: var(--bg-lighter);">
+    <div class="container">
+      <div class="section-title">
+        <span class="tag">Brand Partners</span>
+        <h2>Our Interactive <span>Board Brands</span></h2>
+        <p>We are the exclusive distributor of Clevertouch and official distributor of Newline interactive boards in Zimbabwe and Southern Africa.</p>
+      </div>
+      <div class="product-grid" style="grid-template-columns: repeat(2, 1fr);">
+
+        <!-- Clevertouch Card -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=640&q=80" alt="Clevertouch Interactive Board" loading="lazy">
+            <span class="pc-badge">Exclusive Distributor</span>
+          </div>
+          <div class="pc-body">
+            <h3>Clevertouch Interactive Boards</h3>
+            <p>Next-generation interactive smartboards with sleek design and cutting-edge technology. Features LYNX Whiteboard, Cleverstore, and Snowflake. 5-year warranty included.</p>
+            <ul class="pc-features">
+              <li><i class="fas fa-check"></i> IMPACT Max (30% Discount Available)</li>
+              <li><i class="fas fa-check"></i> IMPACT Plus</li>
+              <li><i class="fas fa-check"></i> IMPACT Pro</li>
+              <li><i class="fas fa-check"></i> ClevertouchLive Management</li>
+              <li><i class="fas fa-check"></i> Clevershare Wireless Sharing</li>
+            </ul>
+            <a href="clevertouch.html" class="btn btn-primary">Explore Clevertouch</a>
+          </div>
+        </div>
+
+        <!-- Newline Card -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=640&q=80" alt="Newline Interactive Board" loading="lazy">
+            <span class="pc-badge">Official Distributor</span>
+          </div>
+          <div class="pc-body">
+            <h3>Newline Interactive Boards</h3>
+            <p>Official distributors of Newline interactive displays for businesses and educational institutions across Zimbabwe and Southern Africa. Premium quality with enterprise features.</p>
+            <ul class="pc-features">
+              <li><i class="fas fa-check"></i> TT Series</li>
+              <li><i class="fas fa-check"></i> RS Series</li>
+              <li><i class="fas fa-check"></i> X Series</li>
+              <li><i class="fas fa-check"></i> Built-in Android OS</li>
+              <li><i class="fas fa-check"></i> 4K UHD Resolution</li>
+              <li><i class="fas fa-check"></i> 20-Point Multi-Touch</li>
+            </ul>
+            <a href="newline.html" class="btn btn-primary">Explore Newline</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: ICON CARDS — BENEFITS -->
+  <section style="padding: 80px 0; background: #fff;">
+    <div class="container">
+      <div class="section-title">
+        <span class="tag">Benefits</span>
+        <h2>Why Choose <span>Interactive Boards?</span></h2>
+      </div>
+      <div class="icon-cards">
+
+        <div class="icon-card">
+          <div class="ic-icon" style="background: #0a3d91;">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h4>Enhanced Learning</h4>
+          <p>Interactive boards make lessons more engaging, improving student retention and participation through visual and interactive content.</p>
+        </div>
+
+        <div class="icon-card">
+          <div class="ic-icon" style="background: #e85d04;">
+            <i class="fas fa-users"></i>
+          </div>
+          <h4>Collaborative Workspace</h4>
+          <p>Enable seamless collaboration with multi-touch technology that allows multiple users to interact simultaneously.</p>
+        </div>
+
+        <div class="icon-card">
+          <div class="ic-icon" style="background: #059669;">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h4>Wireless Connectivity</h4>
+          <p>Connect any device wirelessly using Clevershare or similar apps — Android, Windows, iOS and Chrome all supported.</p>
+        </div>
+
+        <div class="icon-card">
+          <div class="ic-icon" style="background: #7c3aed;">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h4>Remote Learning Ready</h4>
+          <p>Support hybrid and remote learning with built-in video conferencing features and cloud-based content sharing.</p>
+        </div>
+
+        <div class="icon-card">
+          <div class="ic-icon" style="background: #0891b2;">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h4>5-Year Warranty</h4>
+          <p>Our Clevertouch boards come with a full 5-year warranty, ensuring long-term reliability and peace of mind.</p>
+        </div>
+
+        <div class="icon-card">
+          <div class="ic-icon" style="background: #d97706;">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h4>Full After-Sales Support</h4>
+          <p>We provide comprehensive installation, training and after-sales technical support across Zimbabwe.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Transform Your Classroom or Boardroom?</h2>
+      <p>Contact us today for a demonstration or to get a custom quote for your school, university, government office, or business.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
+        <a href="tel:+263242793535" class="btn btn-outline">Call Us Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <span class="fn">The Future<em>Store</em></span>
+          <p>Official Distribution Partner of Logitech, Newline, Clevertouch and Absen. Leading provider of technology products, services and solutions in Zimbabwe and Southern Africa.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/thefuturestoresz/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/thefuturestorezim/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://zw.linkedin.com/company/the-future-store-zim" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> Interactive Boards</a></li>
+            <li><a href="led-displays.html"><i class="fas fa-angle-right"></i> LED Displays</a></li>
+            <li><a href="interactive-kiosk.html"><i class="fas fa-angle-right"></i> Interactive Kiosks</a></li>
+            <li><a href="video-conferencing.html"><i class="fas fa-angle-right"></i> Video Conferencing</a></li>
+            <li><a href="products.html"><i class="fas fa-angle-right"></i> Consumer Electronics</a></li>
+            <li><a href="furniture.html"><i class="fas fa-angle-right"></i> Furniture</a></li>
+            <li><a href="office-365.html"><i class="fas fa-angle-right"></i> Microsoft Office 365</a></li>
+            <li><a href="news.html"><i class="fas fa-angle-right"></i> News &amp; Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="fci"><i class="fas fa-map-marker-alt"></i><span>Shop MK26 Westgate Mall, Harare, Zimbabwe</span></div>
+          <div class="fci"><i class="fas fa-map-marker-alt"></i><span>Shop 1, Old Mutual House, Corner Speke Ave &amp; Sam Nujoma St, Harare</span></div>
+          <div class="fci"><i class="fas fa-phone-alt"></i><span><a href="tel:+263242793535">+263 242 793535</a><br><a href="tel:+263773785638">+263 773 785 638</a></span></div>
+          <div class="fci"><i class="fas fa-envelope"></i><span><a href="mailto:sales@thefuturestore.co.zw">sales@thefuturestore.co.zw</a><br><a href="mailto:westgate@thefuturestore.co.zw">westgate@thefuturestore.co.zw</a></span></div>
+        </div>
+        <div class="footer-col">
+          <h4>Business Hours</h4>
+          <div class="hours-row"><span class="day">Monday</span><span>8:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span class="day">Tuesday</span><span>8:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span class="day">Wednesday</span><span>8:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span class="day">Thursday</span><span>8:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span class="day">Friday</span><span>8:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span class="day">Saturday</span><span>8:00 AM – 5:00 PM</span></div>
+          <div class="hours-row"><span class="day">Sunday</span><span class="closed">Closed</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2025 <a href="https://www.thefuturestore.co.zw" target="_blank" rel="noopener">The Future Store Pvt Ltd</a>. All Rights Reserved.</span>
+        <span>Visit: <a href="https://www.thefuturestore.co.zw" target="_blank" rel="noopener">www.thefuturestore.co.zw</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

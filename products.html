@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablets, Laptops, Computers and Projectors - The Future Store</title>
+  <meta name="description" content="The Future Store offers a wide range of consumer electronics including Tablets, Laptops, Computers and Projectors to clients in Zimbabwe and Southern Africa at competitive prices.">
+  <meta name="keywords" content="tablets, laptops, computers, projectors, consumer electronics, Zimbabwe, Harare, The Future Store">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── Page Hero ── */
+    .page-hero {
+      position: relative;
+      height: 380px;
+      background: url('https://images.unsplash.com/photo-1588776814546-1ffedbe47e84?w=1920&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(6,31,92,.90) 0%, rgba(6,31,92,.60) 60%, rgba(6,31,92,.30) 100%);
+    }
+    .ph-content {
+      position: relative;
+      z-index: 1;
+      padding-left: 0;
+    }
+    .ph-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 3px;
+      margin-bottom: 16px;
+    }
+    .ph-content h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      text-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .ph-content p {
+      color: rgba(255,255,255,.88);
+      font-size: 16px;
+      max-width: 600px;
+      line-height: 1.75;
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      background: var(--bg-light);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .breadcrumb ol {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .breadcrumb ol li + li::before {
+      content: '\f105';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 10px;
+      color: var(--text-light);
+      margin-right: 8px;
+    }
+    .breadcrumb ol li a {
+      color: var(--primary);
+      font-weight: 500;
+      transition: color .3s;
+    }
+    .breadcrumb ol li a:hover { color: var(--accent); }
+    .breadcrumb ol li:last-child { color: var(--text); font-weight: 500; }
+
+    /* ── Product Grid ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    /* ── Product Card ── */
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,.10), 0 2px 4px -1px rgba(0,0,0,.06);
+      transition: transform .35s, box-shadow .35s;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,.10), 0 4px 6px -2px rgba(0,0,0,.05);
+    }
+
+    .pc-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 3px;
+      z-index: 2;
+    }
+
+    .pc-img {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+    .pc-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+    .product-card:hover .pc-img img { transform: scale(1.06); }
+
+    .pc-body {
+      padding: 26px;
+    }
+    .pc-body h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .pc-body > p {
+      color: var(--text-light);
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+    .pc-features {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px 12px;
+      margin-bottom: 20px;
+    }
+    .pc-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .pc-features li::before {
+      content: '\f058';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: var(--accent);
+      font-size: 12px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ── Section heading inline style helper ── */
+    .prod-section-head {
+      margin-bottom: 28px;
+    }
+    .prod-section-head h3 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary);
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .prod-section-head p {
+      color: var(--text-light);
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #1a5fc8 100%);
+      padding: 70px 0;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,.82);
+      font-size: 16px;
+      max-width: 620px;
+      margin: 0 auto 32px;
+      line-height: 1.75;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 992px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .ph-content h1 { font-size: 34px; }
+    }
+    @media (max-width: 640px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .page-hero { height: 320px; }
+      .ph-content h1 { font-size: 26px; }
+      .pc-features { grid-template-columns: 1fr; }
+      .cta-section h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar"><div class="container"><div class="top-bar-left"><span><i class="fas fa-phone-alt"></i> +263 242 793535</span><span><i class="fas fa-envelope"></i> sales@thefuturestore.co.zw</span><span><i class="fas fa-clock"></i> Mon–Fri: 8:00AM–6:00PM &nbsp;|&nbsp; Sat: 8:00AM–5:00PM</span></div><div class="top-bar-right"><a href="https://www.facebook.com/thefuturestoresz/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/thefuturestorezim/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://zw.linkedin.com/company/the-future-store-zim" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a></div></div></div>
+
+  <!-- HEADER -->
+  <header id="site-header"><div class="container"><div class="header-inner">
+    <a href="index.html" class="logo"><div class="logo-mark"><i class="fas fa-bolt"></i></div><div class="logo-text"><span class="brand">The Future<em>Store</em></span><span class="tagline">Technology Solutions</span></div></a>
+    <nav aria-label="Main navigation"><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="interactive-boards.html">Interactive Boards <i class="fas fa-chevron-down"></i></a><ul class="dropdown"><li><a href="clevertouch.html"><i class="fas fa-angle-right"></i> Clevertouch</a></li><li><a href="newline.html"><i class="fas fa-angle-right"></i> Newline</a></li><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> All Interactive Boards</a></li></ul></li>
+      <li><a href="led-displays.html">LED Displays</a></li>
+      <li><a href="interactive-kiosk.html">Interactive Kiosks</a></li>
+      <li class="active"><a href="products.html">Products <i class="fas fa-chevron-down"></i></a><ul class="dropdown"><li><a href="products.html#tablets"><i class="fas fa-angle-right"></i> Tablets</a></li><li><a href="products.html#laptops"><i class="fas fa-angle-right"></i> Laptops</a></li><li><a href="products.html#computers"><i class="fas fa-angle-right"></i> Computers</a></li><li><a href="products.html#projectors"><i class="fas fa-angle-right"></i> Projectors</a></li></ul></li>
+      <li><a href="furniture.html">Furniture</a></li>
+      <li><a href="video-conferencing.html">Video Conferencing</a></li>
+      <li><a href="office-365.html">Office 365</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+  </div></div></header>
+
+  <!-- MOBILE NAV -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+  <div class="mob-nav" id="mobNav" aria-hidden="true">
+    <div class="mob-nav-head"><span style="font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;color:#0a3d91;">The Future<em style="color:#e85d04;font-style:normal;">Store</em></span><button class="mob-close-btn" id="mobClose" aria-label="Close menu"><i class="fas fa-times"></i></button></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" class="mob-has-sub">Interactive Boards <i class="fas fa-chevron-down"></i></a><ul class="mob-sub-list"><li><a href="clevertouch.html"><i class="fas fa-angle-right"></i> Clevertouch</a></li><li><a href="newline.html"><i class="fas fa-angle-right"></i> Newline</a></li><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> All Interactive Boards</a></li></ul></li>
+      <li><a href="led-displays.html">LED Displays</a></li>
+      <li><a href="interactive-kiosk.html">Interactive Kiosks</a></li>
+      <li><a href="#" class="mob-has-sub">Products <i class="fas fa-chevron-down"></i></a><ul class="mob-sub-list"><li><a href="products.html#tablets"><i class="fas fa-angle-right"></i> Tablets</a></li><li><a href="products.html#laptops"><i class="fas fa-angle-right"></i> Laptops</a></li><li><a href="products.html#computers"><i class="fas fa-angle-right"></i> Computers</a></li><li><a href="products.html#projectors"><i class="fas fa-angle-right"></i> Projectors</a></li></ul></li>
+      <li><a href="furniture.html">Furniture</a></li>
+      <li><a href="video-conferencing.html">Video Conferencing</a></li>
+      <li><a href="office-365.html">Office 365</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Products hero">
+    <div class="container">
+      <div class="ph-content">
+        <span class="ph-tag">Consumer Electronics</span>
+        <h1>Tablets, Laptops, Computers &amp; Projectors</h1>
+        <p>We offer a wide range of consumer electronics including Tablets, Laptops, Computers and Projectors to clients in Zimbabwe and Southern Africa at competitive prices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li>Products</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- INTRO -->
+  <section style="padding:60px 0;background:#fff;">
+    <div class="container">
+      <div class="section-title">
+        <span class="tag">Our Products</span>
+        <h2>Consumer <span>Electronics</span></h2>
+        <p>The Future Store carries a comprehensive range of consumer electronics and computing products for individuals, businesses, schools and government institutions across Zimbabwe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLETS -->
+  <section id="tablets" style="padding:0 0 70px 0;background:#fff;">
+    <div class="container">
+      <div class="prod-section-head">
+        <h3>Tablets</h3>
+        <p>A wide selection of tablets for personal and business use. Ideal for students, professionals, and digital classrooms.</p>
+      </div>
+      <div class="product-grid">
+
+        <!-- Card 1 -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=640&q=80" alt="Educational Tablets" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Educational Tablets</h3>
+            <p>Robust, child-friendly tablets designed for classroom use. Pre-loaded with educational apps and content for primary and secondary school learners.</p>
+            <ul class="pc-features">
+              <li>Android OS</li>
+              <li>Ruggedized Casing</li>
+              <li>Long Battery Life</li>
+              <li>Pre-loaded Educational Apps</li>
+              <li>Wi-Fi &amp; Bluetooth</li>
+              <li>Affordable Pricing</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1587033411391-5d9e51cce126?w=640&q=80" alt="Business Tablets" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Business Tablets</h3>
+            <p>Professional tablets for productivity on the go. Ideal for boardroom presentations, field teams and business applications.</p>
+            <ul class="pc-features">
+              <li>High-Performance Processor</li>
+              <li>Full HD Display</li>
+              <li>Windows / Android OS</li>
+              <li>Microsoft Office Compatible</li>
+              <li>Biometric Security</li>
+              <li>LTE Connectivity</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=640&q=80" alt="Apple iPad" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Apple iPad</h3>
+            <p>Genuine Apple iPads available for both personal and enterprise use. The world's leading tablet platform for creativity and productivity.</p>
+            <ul class="pc-features">
+              <li>Apple M-Series Chip</li>
+              <li>Retina Display</li>
+              <li>iPadOS</li>
+              <li>Apple Pencil Compatible</li>
+              <li>Face ID / Touch ID</li>
+              <li>iCloud Integration</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LAPTOPS -->
+  <section id="laptops" style="padding:70px 0;background:var(--bg-lighter);">
+    <div class="container">
+      <div class="prod-section-head">
+        <h3>Laptops</h3>
+        <p>High-performance laptops for students, professionals and businesses. We carry a range of brands to suit every budget.</p>
+      </div>
+      <div class="product-grid">
+
+        <!-- Card 1 -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=640&q=80" alt="Business Laptops" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Business Laptops</h3>
+            <p>Powerful business laptops for maximum productivity. Featuring the latest processors, ample RAM and durable build quality for the modern professional.</p>
+            <ul class="pc-features">
+              <li>Intel Core i5/i7 Processors</li>
+              <li>16GB+ RAM</li>
+              <li>SSD Storage</li>
+              <li>Windows 11 Pro</li>
+              <li>Full HD IPS Display</li>
+              <li>Long Battery Life</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=640&q=80" alt="Student Laptops" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Student Laptops</h3>
+            <p>Budget-friendly laptops designed for students. Lightweight, reliable and capable of handling schoolwork and online learning.</p>
+            <ul class="pc-features">
+              <li>Lightweight Design</li>
+              <li>8GB RAM</li>
+              <li>256GB+ SSD</li>
+              <li>Microsoft Office Compatible</li>
+              <li>HD Webcam</li>
+              <li>Wi-Fi 6</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1611186871525-3c08ff4bd27d?w=640&q=80" alt="MacBook" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>MacBook</h3>
+            <p>Apple MacBooks for creative professionals and power users. Industry-leading performance and build quality with macOS.</p>
+            <ul class="pc-features">
+              <li>Apple Silicon Chip</li>
+              <li>Retina XDR Display</li>
+              <li>macOS Ventura+</li>
+              <li>Up to 22hr Battery</li>
+              <li>MagSafe Charging</li>
+              <li>Touch ID</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPUTERS -->
+  <section id="computers" style="padding:70px 0;background:#fff;">
+    <div class="container">
+      <div class="prod-section-head">
+        <h3>Computers / Desktops</h3>
+        <p>Desktop computers and all-in-ones for offices, schools and home use. We stock iMacs and Windows desktop PCs.</p>
+      </div>
+      <div class="product-grid">
+
+        <!-- Card 1 -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1593640408182-31c228b3e994?w=640&q=80" alt="Desktop PCs" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Desktop PCs</h3>
+            <p>High-performance desktop computers for office and home use. Custom-configured Windows PCs with the latest Intel or AMD processors.</p>
+            <ul class="pc-features">
+              <li>Intel Core / AMD Ryzen</li>
+              <li>Up to 32GB RAM</li>
+              <li>1TB+ SSD/HDD</li>
+              <li>Windows 11</li>
+              <li>Multiple USB Ports</li>
+              <li>Optional Dedicated GPU</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=640&q=80" alt="Apple iMac" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Apple iMac</h3>
+            <p>The elegant all-in-one Apple iMac with large high-definition screen display. Perfect for design, video editing and professional creative work.</p>
+            <ul class="pc-features">
+              <li>Apple M-Series Chip</li>
+              <li>4.5K Retina Display</li>
+              <li>macOS</li>
+              <li>Up to 24-inch Screen</li>
+              <li>Ultra-thin Design</li>
+              <li>Magic Keyboard &amp; Mouse</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1589792923962-537704632910?w=640&q=80" alt="All-in-One PCs" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>All-in-One PCs</h3>
+            <p>Space-saving all-in-one computers combining display and computer in one elegant unit. Ideal for reception areas, offices and classrooms.</p>
+            <ul class="pc-features">
+              <li>Touchscreen Options</li>
+              <li>Intel Core Processors</li>
+              <li>Full HD Display</li>
+              <li>Windows 11</li>
+              <li>Built-in Webcam</li>
+              <li>Minimal Cable Clutter</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTORS -->
+  <section id="projectors" style="padding:70px 0;background:var(--bg-lighter);">
+    <div class="container">
+      <div class="prod-section-head">
+        <h3>Projectors</h3>
+        <p>Epson and other brand projectors with HDMI connectivity for classrooms, boardrooms and home theatre setups.</p>
+      </div>
+      <div class="product-grid">
+
+        <!-- Card 1 - Popular badge -->
+        <div class="product-card">
+          <span class="pc-badge">Popular</span>
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=640&q=80" alt="Epson EB Series Projector" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Epson EB Series</h3>
+            <p>Epson EB projectors with HDMI connectivity delivering bright, sharp images for classrooms and conference rooms. Easy to set up and operate.</p>
+            <ul class="pc-features">
+              <li>HDMI &amp; VGA Input</li>
+              <li>3000–5000 Lumens</li>
+              <li>Full HD Resolution</li>
+              <li>Long Lamp Life</li>
+              <li>Wireless Projection Option</li>
+              <li>Auto-Keystone Correction</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&q=80" alt="Short Throw Projector" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Short Throw Projectors</h3>
+            <p>Short throw projectors that can display large images from a very short distance. Ideal for smaller classrooms or spaces where distance is limited.</p>
+            <ul class="pc-features">
+              <li>Ultra-Short Throw Lens</li>
+              <li>4K / Full HD</li>
+              <li>Interactive Touch Options</li>
+              <li>Minimal Shadow Issues</li>
+              <li>Low Fan Noise</li>
+              <li>Long-Life Laser Light Source</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=640&q=80" alt="Portable Projector" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <h3>Portable Projectors</h3>
+            <p>Compact, lightweight portable projectors for on-the-go presentations, training sessions and outdoor use.</p>
+            <ul class="pc-features">
+              <li>Battery Powered Option</li>
+              <li>Compact &amp; Lightweight</li>
+              <li>HDMI / USB-C Input</li>
+              <li>Built-in Speaker</li>
+              <li>Auto Focus</li>
+              <li>Carry Case Included</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Get a Quote</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Request a Product Quote</h2>
+      <p>Contact us for current pricing on any of our consumer electronics. We offer competitive prices and after-sales support across Zimbabwe.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+        <a href="tel:+263242793535" class="btn btn-outline">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer><div class="container"><div class="footer-grid">
+    <div class="footer-col footer-brand"><span class="fn">The Future<em>Store</em></span><p>Official Distribution Partner of Logitech, Newline, Clevertouch and Absen. Leading provider of technology products, services and solutions in Zimbabwe and Southern Africa.</p><div class="footer-social"><a href="https://www.facebook.com/thefuturestoresz/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/thefuturestorezim/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://zw.linkedin.com/company/the-future-store-zim" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> Interactive Boards</a></li><li><a href="led-displays.html"><i class="fas fa-angle-right"></i> LED Displays</a></li><li><a href="interactive-kiosk.html"><i class="fas fa-angle-right"></i> Interactive Kiosks</a></li><li><a href="video-conferencing.html"><i class="fas fa-angle-right"></i> Video Conferencing</a></li><li><a href="products.html"><i class="fas fa-angle-right"></i> Consumer Electronics</a></li><li><a href="furniture.html"><i class="fas fa-angle-right"></i> Furniture</a></li><li><a href="office-365.html"><i class="fas fa-angle-right"></i> Microsoft Office 365</a></li><li><a href="news.html"><i class="fas fa-angle-right"></i> News &amp; Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Contact Us</h4><div class="fci"><i class="fas fa-map-marker-alt"></i><span>Shop MK26 Westgate Mall, Harare, Zimbabwe</span></div><div class="fci"><i class="fas fa-map-marker-alt"></i><span>Shop 1, Old Mutual House, Corner Speke Ave &amp; Sam Nujoma St, Harare</span></div><div class="fci"><i class="fas fa-phone-alt"></i><span><a href="tel:+263242793535">+263 242 793535</a><br><a href="tel:+263773785638">+263 773 785 638</a></span></div><div class="fci"><i class="fas fa-envelope"></i><span><a href="mailto:sales@thefuturestore.co.zw">sales@thefuturestore.co.zw</a></span></div></div>
+    <div class="footer-col"><h4>Business Hours</h4><div class="hours-row"><span class="day">Monday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Tuesday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Wednesday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Thursday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Friday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Saturday</span><span>8:00 AM – 5:00 PM</span></div><div class="hours-row"><span class="day">Sunday</span><span class="closed">Closed</span></div></div>
+  </div></div>
+  <div class="footer-bottom"><div class="container"><span>&copy; 2025 <a href="https://www.thefuturestore.co.zw" target="_blank" rel="noopener">The Future Store Pvt Ltd</a>. All Rights Reserved.</span><span>Visit: <a href="https://www.thefuturestore.co.zw" target="_blank" rel="noopener">www.thefuturestore.co.zw</a></span></div></div></footer>
+  <button id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <script src="js/main.js"></script>
+</body>
+</html>

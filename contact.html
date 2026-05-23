@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - The Future Store</title>
+  <meta name="description" content="Contact The Future Store Zimbabwe. Visit us at Westgate Mall or Old Mutual House in Harare. Call +263 242 793535 or email sales@thefuturestore.co.zw.">
+  <meta name="keywords" content="contact, The Future Store, Harare, Zimbabwe, Westgate Mall, Old Mutual House, interactive boards, technology">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── Page Hero – gradient only (no bg image) ── */
+    .page-hero {
+      position: relative;
+      height: 340px;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 70%, #1a5fc8 100%);
+      display: flex;
+      align-items: center;
+    }
+    .ph-content {
+      position: relative;
+      z-index: 1;
+    }
+    .ph-tag {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 3px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255,255,255,.3);
+    }
+    .ph-content h1 {
+      font-size: 46px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      text-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+    .ph-content p {
+      color: rgba(255,255,255,.88);
+      font-size: 16px;
+      max-width: 600px;
+      line-height: 1.75;
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      background: var(--bg-light);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .breadcrumb ol {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .breadcrumb ol li + li::before {
+      content: '\f105';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 10px;
+      color: var(--text-light);
+      margin-right: 8px;
+    }
+    .breadcrumb ol li a {
+      color: var(--primary);
+      font-weight: 500;
+      transition: color .3s;
+    }
+    .breadcrumb ol li a:hover { color: var(--accent); }
+    .breadcrumb ol li:last-child { color: var(--text); font-weight: 500; }
+
+    /* ── Contact Section ── */
+    .contact-section {
+      padding: 80px 0;
+      background: var(--bg-lighter);
+    }
+
+    /* ── Contact Grid ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    /* ── Contact Info Col ── */
+    .contact-info-col h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .contact-info-col > p {
+      color: var(--text-light);
+      margin-bottom: 34px;
+      line-height: 1.75;
+    }
+    .cinfo-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .cinfo-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .cinfo-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .cinfo-body h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--dark);
+    }
+    .cinfo-body p,
+    .cinfo-body a {
+      color: var(--text-light);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .cinfo-body a:hover { color: var(--accent); }
+
+    /* ── Contact Form Card ── */
+    .contact-form-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,.10), 0 4px 6px -2px rgba(0,0,0,.05);
+    }
+    .contact-form-card h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+    .contact-form-card .sub {
+      color: var(--text-light);
+      font-size: 14px;
+      margin-bottom: 26px;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--bg-lighter);
+      outline: none;
+      transition: border-color .3s, background .3s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      background: #fff;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 13px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* ── Map Wrap ── */
+    .map-wrap {
+      height: 400px;
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ── Quick Contact Icon Cards ── */
+    .quick-contact-section {
+      padding: 60px 0;
+      background: #fff;
+    }
+    .icon-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 50px;
+    }
+    .icon-card {
+      background: var(--bg-lighter);
+      border-radius: 12px;
+      padding: 36px 30px;
+      text-align: center;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,.08), 0 2px 4px -1px rgba(0,0,0,.04);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .icon-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,.10), 0 4px 6px -2px rgba(0,0,0,.05);
+    }
+    .ic-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: #fff;
+      margin: 0 auto 20px;
+    }
+    .icon-card h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .icon-card p {
+      color: var(--text-light);
+      font-size: 14.5px;
+      line-height: 1.8;
+    }
+    .icon-card a {
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .icon-card a:hover { color: var(--accent); }
+
+    /* ── Responsive ── */
+    @media (max-width: 992px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .icon-cards-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+      .ph-content h1 { font-size: 36px; }
+    }
+    @media (max-width: 768px) {
+      .form-row-2 { grid-template-columns: 1fr; }
+      .contact-form-card { padding: 28px 20px; }
+      .page-hero { height: 280px; }
+      .ph-content h1 { font-size: 28px; }
+    }
+    @media (max-width: 520px) {
+      .ph-content h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar"><div class="container"><div class="top-bar-left"><span><i class="fas fa-phone-alt"></i> +263 242 793535</span><span><i class="fas fa-envelope"></i> sales@thefuturestore.co.zw</span><span><i class="fas fa-clock"></i> Mon–Fri: 8:00AM–6:00PM &nbsp;|&nbsp; Sat: 8:00AM–5:00PM</span></div><div class="top-bar-right"><a href="https://www.facebook.com/thefuturestoresz/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/thefuturestorezim/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://zw.linkedin.com/company/the-future-store-zim" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a></div></div></div>
+
+  <!-- HEADER -->
+  <header id="site-header"><div class="container"><div class="header-inner">
+    <a href="index.html" class="logo"><div class="logo-mark"><i class="fas fa-bolt"></i></div><div class="logo-text"><span class="brand">The Future<em>Store</em></span><span class="tagline">Technology Solutions</span></div></a>
+    <nav aria-label="Main navigation"><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="interactive-boards.html">Interactive Boards <i class="fas fa-chevron-down"></i></a><ul class="dropdown"><li><a href="clevertouch.html"><i class="fas fa-angle-right"></i> Clevertouch</a></li><li><a href="newline.html"><i class="fas fa-angle-right"></i> Newline</a></li><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> All Interactive Boards</a></li></ul></li>
+      <li><a href="led-displays.html">LED Displays</a></li>
+      <li><a href="interactive-kiosk.html">Interactive Kiosks</a></li>
+      <li><a href="products.html">Products <i class="fas fa-chevron-down"></i></a><ul class="dropdown"><li><a href="products.html#tablets"><i class="fas fa-angle-right"></i> Tablets</a></li><li><a href="products.html#laptops"><i class="fas fa-angle-right"></i> Laptops</a></li><li><a href="products.html#computers"><i class="fas fa-angle-right"></i> Computers</a></li><li><a href="products.html#projectors"><i class="fas fa-angle-right"></i> Projectors</a></li></ul></li>
+      <li><a href="furniture.html">Furniture</a></li>
+      <li><a href="video-conferencing.html">Video Conferencing</a></li>
+      <li><a href="office-365.html">Office 365</a></li>
+      <li><a href="news.html">News</a></li>
+      <li class="active"><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+  </div></div></header>
+
+  <!-- MOBILE NAV -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+  <div class="mob-nav" id="mobNav" aria-hidden="true">
+    <div class="mob-nav-head"><span style="font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;color:#0a3d91;">The Future<em style="color:#e85d04;font-style:normal;">Store</em></span><button class="mob-close-btn" id="mobClose" aria-label="Close menu"><i class="fas fa-times"></i></button></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" class="mob-has-sub">Interactive Boards <i class="fas fa-chevron-down"></i></a><ul class="mob-sub-list"><li><a href="clevertouch.html"><i class="fas fa-angle-right"></i> Clevertouch</a></li><li><a href="newline.html"><i class="fas fa-angle-right"></i> Newline</a></li><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> All Interactive Boards</a></li></ul></li>
+      <li><a href="led-displays.html">LED Displays</a></li>
+      <li><a href="interactive-kiosk.html">Interactive Kiosks</a></li>
+      <li><a href="#" class="mob-has-sub">Products <i class="fas fa-chevron-down"></i></a><ul class="mob-sub-list"><li><a href="products.html#tablets"><i class="fas fa-angle-right"></i> Tablets</a></li><li><a href="products.html#laptops"><i class="fas fa-angle-right"></i> Laptops</a></li><li><a href="products.html#computers"><i class="fas fa-angle-right"></i> Computers</a></li><li><a href="products.html#projectors"><i class="fas fa-angle-right"></i> Projectors</a></li></ul></li>
+      <li><a href="furniture.html">Furniture</a></li>
+      <li><a href="video-conferencing.html">Video Conferencing</a></li>
+      <li><a href="office-365.html">Office 365</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Contact hero">
+    <div class="container">
+      <div class="ph-content">
+        <span class="ph-tag">Get In Touch</span>
+        <h1>Contact Us</h1>
+        <p>We have two convenient locations in Harare. Call us, email us or fill in the form below and our team will respond promptly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li>Contact Us</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT – Contact Info -->
+        <div class="contact-info-col">
+          <h3>We'd Love to Hear From You</h3>
+          <p>Visit us at either of our two Harare branches, call us or send us an email. Our knowledgeable team is ready to help you find the perfect technology solution.</p>
+
+          <div class="cinfo-list">
+
+            <!-- Westgate -->
+            <div class="cinfo-item">
+              <div class="cinfo-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="cinfo-body">
+                <h4>Westgate Mall Branch</h4>
+                <p>Shop MK26, Westgate Mall, Harare, Zimbabwe</p>
+                <p>
+                  <a href="tel:+263242312230">+263 242 312230</a> /
+                  <a href="tel:+263242312231">312231</a> /
+                  <a href="tel:+263242312232">312232</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Old Mutual House -->
+            <div class="cinfo-item">
+              <div class="cinfo-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="cinfo-body">
+                <h4>Town Branch – Old Mutual House</h4>
+                <p>Shop 1, Old Mutual House, Corner Speke Ave &amp; Sam Nujoma St, Harare</p>
+                <p>
+                  <a href="tel:+263242793525">+263 242 793525</a> /
+                  <a href="tel:+263242793535">793535</a> /
+                  <a href="tel:+263242793537">793537</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Mobile -->
+            <div class="cinfo-item">
+              <div class="cinfo-icon"><i class="fas fa-mobile-alt"></i></div>
+              <div class="cinfo-body">
+                <h4>Mobile Numbers</h4>
+                <p>
+                  <a href="tel:+263773785638">+263 773 785 638</a> &nbsp;|&nbsp;
+                  <a href="tel:+263771126859">+263 771 126 859</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="cinfo-item">
+              <div class="cinfo-icon"><i class="fas fa-envelope"></i></div>
+              <div class="cinfo-body">
+                <h4>Email Addresses</h4>
+                <p><a href="mailto:sales@thefuturestore.co.zw">sales@thefuturestore.co.zw</a></p>
+                <p><a href="mailto:westgate@thefuturestore.co.zw">westgate@thefuturestore.co.zw</a></p>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="cinfo-item">
+              <div class="cinfo-icon"><i class="fas fa-clock"></i></div>
+              <div class="cinfo-body">
+                <h4>Business Hours</h4>
+                <p>Mon–Fri: 8:00AM–6:00PM</p>
+                <p>Sat: 8:00AM–5:00PM</p>
+                <p>Sun: Closed</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT – Contact Form -->
+        <div class="contact-form-card">
+          <h3>Send Us a Message</h3>
+          <p class="sub">Fill in the form below and a member of our team will get back to you as soon as possible.</p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="fname">First Name *</label>
+                <input type="text" id="fname" name="fname" placeholder="John" required>
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name *</label>
+                <input type="text" id="lname" name="lname" placeholder="Doe" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+263 7XX XXX XXX">
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="" disabled selected>Select a subject...</option>
+                <option value="general">General Enquiry</option>
+                <option value="clevertouch">Interactive Boards – Clevertouch</option>
+                <option value="newline">Interactive Boards – Newline</option>
+                <option value="led">LED Displays (Absen)</option>
+                <option value="video">Video Conferencing (Logitech)</option>
+                <option value="kiosk">Interactive Kiosks</option>
+                <option value="electronics">Consumer Electronics (Laptops/Tablets/Projectors)</option>
+                <option value="furniture">Furniture</option>
+                <option value="office365">Microsoft Office 365</option>
+                <option value="demo">Request a Demo</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Tell us about your requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.8241!2d31.043!3d-17.8315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4e7a1c60001%3A0x2b3af24e3ee07df!2sOld%20Mutual%20House%2C%20Harare%2C%20Zimbabwe!5e0!3m2!1sen!2szw!4v1716000000000!5m2!1sen!2szw"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="The Future Store – Old Mutual House, Harare">
+    </iframe>
+  </div>
+
+  <!-- QUICK CONTACT – 3 ICON CARDS -->
+  <section class="quick-contact-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="tag">Quick Contact</span>
+        <h2>Other Ways to <span>Reach Us</span></h2>
+      </div>
+
+      <div class="icon-cards-grid">
+
+        <!-- Call Us -->
+        <div class="icon-card">
+          <div class="ic-icon" style="background:#0a3d91;">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h4>Call Us</h4>
+          <p>
+            <a href="tel:+263242793535">+263 242 793535</a><br>
+            <a href="tel:+263773785638">+263 773 785 638</a><br>
+            Mon–Fri 8AM–6PM
+          </p>
+        </div>
+
+        <!-- Email Us -->
+        <div class="icon-card">
+          <div class="ic-icon" style="background:#e85d04;">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h4>Email Us</h4>
+          <p>
+            <a href="mailto:sales@thefuturestore.co.zw">sales@thefuturestore.co.zw</a><br>
+            <a href="mailto:westgate@thefuturestore.co.zw">westgate@thefuturestore.co.zw</a><br>
+            We respond within 24 hours
+          </p>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="icon-card">
+          <div class="ic-icon" style="background:#059669;">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h4>Visit Us</h4>
+          <p>
+            Westgate Mall (Shop MK26)<br>
+            Old Mutual House (Shop 1)<br>
+            Harare, Zimbabwe
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer><div class="container"><div class="footer-grid">
+    <div class="footer-col footer-brand"><span class="fn">The Future<em>Store</em></span><p>Official Distribution Partner of Logitech, Newline, Clevertouch and Absen. Leading provider of technology products, services and solutions in Zimbabwe and Southern Africa.</p><div class="footer-social"><a href="https://www.facebook.com/thefuturestoresz/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/thefuturestorezim/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://zw.linkedin.com/company/the-future-store-zim" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> Interactive Boards</a></li><li><a href="led-displays.html"><i class="fas fa-angle-right"></i> LED Displays</a></li><li><a href="interactive-kiosk.html"><i class="fas fa-angle-right"></i> Interactive Kiosks</a></li><li><a href="video-conferencing.html"><i class="fas fa-angle-right"></i> Video Conferencing</a></li><li><a href="products.html"><i class="fas fa-angle-right"></i> Consumer Electronics</a></li><li><a href="furniture.html"><i class="fas fa-angle-right"></i> Furniture</a></li><li><a href="office-365.html"><i class="fas fa-angle-right"></i> Microsoft Office 365</a></li><li><a href="news.html"><i class="fas fa-angle-right"></i> News &amp; Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Contact Us</h4><div class="fci"><i class="fas fa-map-marker-alt"></i><span>Shop MK26 Westgate Mall, Harare, Zimbabwe</span></div><div class="fci"><i class="fas fa-map-marker-alt"></i><span>Shop 1, Old Mutual House, Corner Speke Ave &amp; Sam Nujoma St, Harare</span></div><div class="fci"><i class="fas fa-phone-alt"></i><span><a href="tel:+263242793535">+263 242 793535</a><br><a href="tel:+263773785638">+263 773 785 638</a></span></div><div class="fci"><i class="fas fa-envelope"></i><span><a href="mailto:sales@thefuturestore.co.zw">sales@thefuturestore.co.zw</a></span></div></div>
+    <div class="footer-col"><h4>Business Hours</h4><div class="hours-row"><span class="day">Monday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Tuesday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Wednesday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Thursday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Friday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Saturday</span><span>8:00 AM – 5:00 PM</span></div><div class="hours-row"><span class="day">Sunday</span><span class="closed">Closed</span></div></div>
+  </div></div>
+  <div class="footer-bottom"><div class="container"><span>&copy; 2025 <a href="https://www.thefuturestore.co.zw" target="_blank" rel="noopener">The Future Store Pvt Ltd</a>. All Rights Reserved.</span><span>Visit: <a href="https://www.thefuturestore.co.zw" target="_blank" rel="noopener">www.thefuturestore.co.zw</a></span></div></div></footer>
+  <button id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <script src="js/main.js"></script>
+</body>
+</html>

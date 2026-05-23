@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News - The Future Store</title>
+  <meta name="description" content="Stay informed with the latest news, product launches, technology insights and company updates from The Future Store Zimbabwe.">
+  <meta name="keywords" content="news, blog, technology news, interactive boards, Zimbabwe, Harare, The Future Store">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── Page Hero ── */
+    .page-hero {
+      position: relative;
+      height: 380px;
+      background: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1920&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(6,31,92,.90) 0%, rgba(6,31,92,.60) 60%, rgba(6,31,92,.30) 100%);
+    }
+    .ph-content {
+      position: relative;
+      z-index: 1;
+    }
+    .ph-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 3px;
+      margin-bottom: 16px;
+    }
+    .ph-content h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      text-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .ph-content p {
+      color: rgba(255,255,255,.88);
+      font-size: 16px;
+      max-width: 600px;
+      line-height: 1.75;
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      background: var(--bg-light);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .breadcrumb ol {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .breadcrumb ol li + li::before {
+      content: '\f105';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 10px;
+      color: var(--text-light);
+      margin-right: 8px;
+    }
+    .breadcrumb ol li a {
+      color: var(--primary);
+      font-weight: 500;
+      transition: color .3s;
+    }
+    .breadcrumb ol li a:hover { color: var(--accent); }
+    .breadcrumb ol li:last-child { color: var(--text); font-weight: 500; }
+
+    /* ── News Blog Section ── */
+    .news-blog-section {
+      padding: 80px 0;
+      background: var(--bg-lighter);
+    }
+
+    /* ── News Grid ── */
+    .news-grid-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    /* ── News Card ── */
+    .news-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,.10), 0 2px 4px -1px rgba(0,0,0,.06);
+      transition: transform .3s, box-shadow .3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .news-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,.10), 0 4px 6px -2px rgba(0,0,0,.05);
+    }
+
+    .news-img {
+      height: 210px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .news-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+    .news-card:hover .news-img img { transform: scale(1.06); }
+
+    .news-body {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .news-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .news-cat {
+      background: var(--accent);
+      color: #fff;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      flex-shrink: 0;
+    }
+    .news-date {
+      color: var(--text-light);
+      font-size: 12px;
+    }
+    .news-date i { margin-right: 4px; }
+
+    .news-body h3 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.45;
+      margin-bottom: 10px;
+      color: var(--dark);
+      transition: color .3s;
+      flex: 1;
+    }
+    .news-card:hover .news-body h3 { color: var(--accent); }
+
+    .news-body p {
+      color: var(--text-light);
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--accent);
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      transition: gap .3s;
+      margin-top: auto;
+    }
+    .read-more:hover { gap: 12px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 992px) {
+      .news-grid-inner { grid-template-columns: repeat(2, 1fr); }
+      .ph-content h1 { font-size: 34px; }
+    }
+    @media (max-width: 640px) {
+      .news-grid-inner { grid-template-columns: 1fr; }
+      .page-hero { height: 320px; }
+      .ph-content h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar"><div class="container"><div class="top-bar-left"><span><i class="fas fa-phone-alt"></i> +263 242 793535</span><span><i class="fas fa-envelope"></i> sales@thefuturestore.co.zw</span><span><i class="fas fa-clock"></i> Mon–Fri: 8:00AM–6:00PM &nbsp;|&nbsp; Sat: 8:00AM–5:00PM</span></div><div class="top-bar-right"><a href="https://www.facebook.com/thefuturestoresz/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/thefuturestorezim/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://zw.linkedin.com/company/the-future-store-zim" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a></div></div></div>
+
+  <!-- HEADER -->
+  <header id="site-header"><div class="container"><div class="header-inner">
+    <a href="index.html" class="logo"><div class="logo-mark"><i class="fas fa-bolt"></i></div><div class="logo-text"><span class="brand">The Future<em>Store</em></span><span class="tagline">Technology Solutions</span></div></a>
+    <nav aria-label="Main navigation"><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="interactive-boards.html">Interactive Boards <i class="fas fa-chevron-down"></i></a><ul class="dropdown"><li><a href="clevertouch.html"><i class="fas fa-angle-right"></i> Clevertouch</a></li><li><a href="newline.html"><i class="fas fa-angle-right"></i> Newline</a></li><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> All Interactive Boards</a></li></ul></li>
+      <li><a href="led-displays.html">LED Displays</a></li>
+      <li><a href="interactive-kiosk.html">Interactive Kiosks</a></li>
+      <li><a href="products.html">Products <i class="fas fa-chevron-down"></i></a><ul class="dropdown"><li><a href="products.html#tablets"><i class="fas fa-angle-right"></i> Tablets</a></li><li><a href="products.html#laptops"><i class="fas fa-angle-right"></i> Laptops</a></li><li><a href="products.html#computers"><i class="fas fa-angle-right"></i> Computers</a></li><li><a href="products.html#projectors"><i class="fas fa-angle-right"></i> Projectors</a></li></ul></li>
+      <li><a href="furniture.html">Furniture</a></li>
+      <li><a href="video-conferencing.html">Video Conferencing</a></li>
+      <li><a href="office-365.html">Office 365</a></li>
+      <li class="active"><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+  </div></div></header>
+
+  <!-- MOBILE NAV -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+  <div class="mob-nav" id="mobNav" aria-hidden="true">
+    <div class="mob-nav-head"><span style="font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;color:#0a3d91;">The Future<em style="color:#e85d04;font-style:normal;">Store</em></span><button class="mob-close-btn" id="mobClose" aria-label="Close menu"><i class="fas fa-times"></i></button></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" class="mob-has-sub">Interactive Boards <i class="fas fa-chevron-down"></i></a><ul class="mob-sub-list"><li><a href="clevertouch.html"><i class="fas fa-angle-right"></i> Clevertouch</a></li><li><a href="newline.html"><i class="fas fa-angle-right"></i> Newline</a></li><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> All Interactive Boards</a></li></ul></li>
+      <li><a href="led-displays.html">LED Displays</a></li>
+      <li><a href="interactive-kiosk.html">Interactive Kiosks</a></li>
+      <li><a href="#" class="mob-has-sub">Products <i class="fas fa-chevron-down"></i></a><ul class="mob-sub-list"><li><a href="products.html#tablets"><i class="fas fa-angle-right"></i> Tablets</a></li><li><a href="products.html#laptops"><i class="fas fa-angle-right"></i> Laptops</a></li><li><a href="products.html#computers"><i class="fas fa-angle-right"></i> Computers</a></li><li><a href="products.html#projectors"><i class="fas fa-angle-right"></i> Projectors</a></li></ul></li>
+      <li><a href="furniture.html">Furniture</a></li>
+      <li><a href="video-conferencing.html">Video Conferencing</a></li>
+      <li><a href="office-365.html">Office 365</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="News hero">
+    <div class="container">
+      <div class="ph-content">
+        <span class="ph-tag">Latest Updates</span>
+        <h1>News &amp; Blog</h1>
+        <p>Stay informed with the latest news, product launches, technology insights and company updates from The Future Store Zimbabwe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li>News</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- BLOG GRID -->
+  <section class="news-blog-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="tag">Recent Posts</span>
+        <h2>Latest <span>Articles</span></h2>
+        <p>Read our latest news, product reviews and technology insights.</p>
+      </div>
+
+      <div class="news-grid-inner">
+
+        <!-- Post 1 -->
+        <article class="news-card">
+          <div class="news-img">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=640&q=80" alt="Empowering Zimbabwean Schools" loading="lazy">
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-cat">Education</span>
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> October 2, 2024</span>
+            </div>
+            <h3>Empowering Zimbabwean Schools: How The Future Store's High-Tech Gadgets Are Revolutionizing Education for Smart Classrooms</h3>
+            <p>Discover how cutting-edge interactive technology is transforming classrooms across Zimbabwe.</p>
+            <a href="https://thefuturestore.co.zw/2024/10/02/empowering-zimbabwean-schools-how-the-future-stores-high-tech-gadgets-are-revolutionizing-education-for-smart-classrooms/" target="_blank" rel="noopener" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="news-card">
+          <div class="news-img">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&q=80" alt="Projector vs LED Smartboard" loading="lazy">
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-cat">Technology</span>
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> November 5, 2024</span>
+            </div>
+            <h3>Do You Need a Projector for Your LED All-in-One Interactive Smartboard?</h3>
+            <p>Explore the key differences between traditional projectors and modern LED all-in-one interactive smartboards.</p>
+            <a href="https://thefuturestore.co.zw/2024/11/05/do-you-need-a-projector-for-your-led-all-in-one-interactive-smartboard/" target="_blank" rel="noopener" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="news-card">
+          <div class="news-img">
+            <img src="https://images.unsplash.com/photo-1612865547334-09cb8cb455da?w=640&q=80" alt="Interactive Smartboards for Remote Work" loading="lazy">
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-cat">Collaboration</span>
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> September 15, 2024</span>
+            </div>
+            <h3>Interactive Smartboards as a Hub for Remote and Hybrid Work/Learning</h3>
+            <p>How interactive smartboards are enabling seamless remote and hybrid work collaboration for modern Zimbabwean organisations.</p>
+            <a href="https://thefuturestore.co.zw/news/" target="_blank" rel="noopener" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="news-card">
+          <div class="news-img">
+            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=640&q=80" alt="Clevertouch IMPACT Max 30% Discount" loading="lazy">
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-cat">Products</span>
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> August 20, 2024</span>
+            </div>
+            <h3>Introducing the Clevertouch IMPACT Max — Now Available with 30% Discount</h3>
+            <p>The Future Store announces a massive 30% discount on the Clevertouch IMPACT Max for schools and businesses in Zimbabwe.</p>
+            <a href="https://thefuturestore.co.zw/clevertouch/" target="_blank" rel="noopener" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Post 5 -->
+        <article class="news-card">
+          <div class="news-img">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=640&q=80" alt="Absen LED Displays Zimbabwe" loading="lazy">
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-cat">Business</span>
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> July 10, 2024</span>
+            </div>
+            <h3>How Absen LED Displays Are Transforming Zimbabwe's Business Landscape</h3>
+            <p>From boardrooms to malls, Absen LED displays distributed by The Future Store are setting new standards for visual communication.</p>
+            <a href="https://thefuturestore.co.zw/led-displays/" target="_blank" rel="noopener" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Post 6 -->
+        <article class="news-card">
+          <div class="news-img">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=640&q=80" alt="Logitech Video Conferencing Zimbabwe" loading="lazy">
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-cat">Video Conferencing</span>
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> June 5, 2024</span>
+            </div>
+            <h3>Why Logitech Video Conferencing is the Smart Choice for Zimbabwean Businesses</h3>
+            <p>As remote work grows, The Future Store's Logitech video conferencing solutions are helping Zimbabwe's businesses stay connected.</p>
+            <a href="https://thefuturestore.co.zw/video-conferencing/" target="_blank" rel="noopener" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer><div class="container"><div class="footer-grid">
+    <div class="footer-col footer-brand"><span class="fn">The Future<em>Store</em></span><p>Official Distribution Partner of Logitech, Newline, Clevertouch and Absen. Leading provider of technology products, services and solutions in Zimbabwe and Southern Africa.</p><div class="footer-social"><a href="https://www.facebook.com/thefuturestoresz/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/thefuturestorezim/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://zw.linkedin.com/company/the-future-store-zim" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="interactive-boards.html"><i class="fas fa-angle-right"></i> Interactive Boards</a></li><li><a href="led-displays.html"><i class="fas fa-angle-right"></i> LED Displays</a></li><li><a href="interactive-kiosk.html"><i class="fas fa-angle-right"></i> Interactive Kiosks</a></li><li><a href="video-conferencing.html"><i class="fas fa-angle-right"></i> Video Conferencing</a></li><li><a href="products.html"><i class="fas fa-angle-right"></i> Consumer Electronics</a></li><li><a href="furniture.html"><i class="fas fa-angle-right"></i> Furniture</a></li><li><a href="office-365.html"><i class="fas fa-angle-right"></i> Microsoft Office 365</a></li><li><a href="news.html"><i class="fas fa-angle-right"></i> News &amp; Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Contact Us</h4><div class="fci"><i class="fas fa-map-marker-alt"></i><span>Shop MK26 Westgate Mall, Harare, Zimbabwe</span></div><div class="fci"><i class="fas fa-map-marker-alt"></i><span>Shop 1, Old Mutual House, Corner Speke Ave &amp; Sam Nujoma St, Harare</span></div><div class="fci"><i class="fas fa-phone-alt"></i><span><a href="tel:+263242793535">+263 242 793535</a><br><a href="tel:+263773785638">+263 773 785 638</a></span></div><div class="fci"><i class="fas fa-envelope"></i><span><a href="mailto:sales@thefuturestore.co.zw">sales@thefuturestore.co.zw</a></span></div></div>
+    <div class="footer-col"><h4>Business Hours</h4><div class="hours-row"><span class="day">Monday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Tuesday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Wednesday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Thursday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Friday</span><span>8:00 AM – 6:00 PM</span></div><div class="hours-row"><span class="day">Saturday</span><span>8:00 AM – 5:00 PM</span></div><div class="hours-row"><span class="day">Sunday</span><span class="closed">Closed</span></div></div>
+  </div></div>
+  <div class="footer-bottom"><div class="container"><span>&copy; 2025 <a href="https://www.thefuturestore.co.zw" target="_blank" rel="noopener">The Future Store Pvt Ltd</a>. All Rights Reserved.</span><span>Visit: <a href="https://www.thefuturestore.co.zw" target="_blank" rel="noopener">www.thefuturestore.co.zw</a></span></div></div></footer>
+  <button id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <script src="js/main.js"></script>
+</body>
+</html>
